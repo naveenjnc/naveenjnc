@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.springframework</groupId>
     <artifactId>jb-hello-world-maven</artifactId>
-    <packaging>ear</packaging>
+    <packaging>jar</packaging>
     <version>0.1.0</version>
 
     <!-- tag::joda[] -->
@@ -33,19 +33,16 @@
                     <execution>
                         <phase>package</phase>
                         <goals>
-                            <goal>run</goal>
+                            <goal>shade</goal>
                         </goals>
-                        <configurations>
-                            <tasks>
-                                <echo>hello bro</echo>
+                        <configuration>
                             <transformers>
                                 <transformer
                                     implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                                     <mainClass>hello.HelloWorld</mainClass>
                                 </transformer>
                             </transformers>
-                            </tasks>
-                        </configurations>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
