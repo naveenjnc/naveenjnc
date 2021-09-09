@@ -36,12 +36,9 @@
                             <goal>shade</goal>
                         </goals>
                         <configuration>
-                            <transformers>
-                                <transformer
-                                    implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>hello.HelloWorld</mainClass>
-                                </transformer>
-                            </transformers>
+                            <tasks>
+                                <echo>hello world=========</echo>
+                            </tasks>
                         </configuration>
                     </execution>
                 </executions>
